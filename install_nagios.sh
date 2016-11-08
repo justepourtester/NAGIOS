@@ -1,5 +1,26 @@
 apt-get install wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev unzip
-wget http://downloads.sourceforge.net/project/nagios/nagios-4.x/nagios-4.2.0/nagios-4.2.0.tar.gz?r=&ts=1478611274&use_mirror=netassist
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.0.2.tar.gz
+wget http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz
+useradd nagios
+groupadd nagcmd
+usermod -a -G nagcmd nagios
+usermod -a -G nagios,nagcmd www-data
+tar zxvf nagios-4.2.0.tar.gz
+tar zxvf nagios-plugins-2.1.2.tar.gz
+cd nagios-4.2.0
+./configure --with-command-group=nagcmd -–with-mail=/usr/bin/sendmail
+--with-httpd-conf=/etc/apache2/
+wget wget http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz
+useradd nagios
+groupadd nagcmd
+usermod -a -G nagcmd nagios
+usermod -a -G nagios,nagcmd www-data
+tar zxvf nagios-4.2.0.tar.gz
+tar zxvf nagios-plugins-2.1.2.tar.gz
+cd nagios-4.2.0
+./configure --with-command-group=nagcmd -–with-mail=/usr/bin/sendmail
+--with-httpd-conf=/etc/apache2/
+4.2.0.tar.gz?r=&ts=1478611274&use_mirror=netassist
 wget wget http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz
 useradd nagios
 groupadd nagcmd
