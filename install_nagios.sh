@@ -1,5 +1,11 @@
 apt-get install wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev unzip
-wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.0.2.tar.gz
+wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.2.0.tar.gz
+wget http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz
+useradd nagios
+groupadd nagcmd
+usermod -a -G nagcmd nagios
+usermod -a -G nagios,nagcmd www-data
+tar zxvf nagios-4.2.0.tar.gz
 wget http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz
 useradd nagios
 groupadd nagcmd
