@@ -1,5 +1,5 @@
 apt-get install wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev unzip
-wget http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.2.0.tar.gz
+wget http://downloads.sourceforge.net/project/nagios/nagios-4.x/nagios-4.2.0/nagios-4.2.0.tar.gz
 wget http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz
 useradd nagios
 groupadd nagcmd
@@ -8,7 +8,7 @@ usermod -a -G nagios,nagcmd www-data
 tar zxvf nagios-4.2.0.tar.gz
 tar zxvf nagios-plugins-2.1.2.tar.gz
 cd nagios-4.2.0
-./configure --with-command-group=nagcmd -–with-mail=/usr/bin/sendmail
+./configure --with-command-group=nagcmd -â€“with-mail=/usr/bin/sendmail
 --with-httpd-conf=/etc/apache2/
 make all
 make install
@@ -29,7 +29,7 @@ DAEMON_ARGS="-d /usr/local/nagios/etc/nagios.cfg"
 PIDFILE=/usr/local/nagios/var/$NAME.lock" >> /etc/init.d/nagios
 systemctl restart apache2
 systemctl start nagios
-htpasswd –c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+htpasswd â€“c /usr/local/nagios/etc/htpasswd.users nagiosadmin
 cd /tmp/nagios-plugins-2.1.2
 ./configure --with-nagios-user=nagios --with-nagios-group=nagios
 make
