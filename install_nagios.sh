@@ -1,3 +1,5 @@
+#!/bin/sh
+
 apt-get install wget build-essential apache2 php apache2-mod-php7.0 php-gd libgd-dev unzip
 wget --no-check-certificate -c http://prdownloads.sourceforge.net/sourceforge/nagios/nagios-4.2.0.tar.gz
 wget --no-check-certificate -c http://nagios-plugins.org/download/nagios-plugins-2.1.2.tar.gz 
